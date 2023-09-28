@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to get Username and Group in Linux</title>
+    <link rel="stylesheet" href="app.css">
+    <!-- <link rel="stylesheet" href="apps.css"> -->
+</head>
+<body>
+    <section>
+    <h1>How to get Username and Group in Linux</h1>
+    <div class="date">September 28, 2023</div>
+    <p>Every user in Linux has a username and a group. These are used to identify and manage users and their permissions. In this quick guide, we will learn how to get your personal username and group, as well as the username and group of a specific user.
+
+    </p>
+    <h3>Personal Username and Group</h3>
+
+    <p>To get the username and group of the currently logged in user, you can run the following command:</p>
+    <div class="codeBlock">id</div>
+    <p>The output will look like this:</p>
+    <div class="codeBlock">uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lpadmin),126(sambashare)</div>
+    <p>Here is the explanation of the output:
+
+    </p>
+    <ul>
+        <li>uid=1000(ubuntu) — The user ID i.e. 1000 and the username i.e. ubuntu. The user ID is a unique number that identifies the user and the username is the name of the user.
+          
+            </li>
+            <li>gid=1000(ubuntu) — The group ID i.e. 1000 and the group name i.e. ubuntu.</li>
+            <li>groups=1000(ubuntu),4(adm).. — The supplementary groups of the user. The supplementary groups are the groups that the user is also a member of.
+            </li>
+    </ul>
+    <p>You can also use different options to select the output format. For example, to get the username only, you can run:
+
+    </p>
+    <div class="codeBlock">id -un # ubuntu</div>
+    <p>To get the group only, you can run:</p>
+    <div class="codeBlock">id -gn # ubuntu</div>
+    <p>You can also use the id command to get the details of a specific user.</p>
+    <h3>Details of a Specific User</h3>
+    <p>To get the username and group of a specific user, you can run the following command:</p>
+    <div class="codeBlock">id &#60;options&#62; &#60;username&#62;&#60;username&#62;</div>
+    <p>For example to get the group name of a user named root, you can run:</p>
+    <div class="codeBlock">id root</div>
+    <p>To only get the username and the group name, you can run:</p>
+    <div class="codeBlock">id -un root # root <br>
+        id -gn root # wheel</div>
+    <h3>Conclusion</h3>
+    <p>In this quick guide, we learned how to get the username and group of the currently logged in user and a specific user. We also learned how to use the id command to get the username and group of a user.</p>
+
+    <p class="copy">© All rights reserved — cs.fyi</p>
+</section>
+</body>
+</html>
